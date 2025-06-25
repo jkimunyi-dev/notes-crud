@@ -1,0 +1,16 @@
+<nav class="app-nav">
+  <div class="nav-container">
+    <a routerLink="/notes" class="nav-logo">Notes App</a>
+    
+    <div class="nav-links">
+      <ng-container *ngIf="authService.isLoggedIn(); else unauthenticatedLinks">
+        <button (click)="onLogout()" class="nav-button">Logout</button>
+      </ng-container>
+      
+      <ng-template #unauthenticatedLinks>
+        <a routerLink="/auth/login" class="nav-link">Login</a>
+        <a routerLink="/auth/register" class="nav-link nav-button">Register</a>
+      </ng-template>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,26 @@
+<div class="note-item" >
+    <div class="note-header">
+        <h4> {{note.title}} </h4>
+        <span class="note-category" *ngIf="note.category"> {{note.category}} </span>
+    </div>
+
+    <div class="note-content">
+       <p> {{note.content}} </p>
+    </div>    
+
+    <div class="note-footer">
+        <div class="note-dates">
+            <small> Created: {{formatDate(note.createdAt)}} </small>
+            <small *ngIf="note.updatedAt !== note.createdAt" >
+                Updated at : {{formatDate(note.updatedAt)}}
+            </small>
+        </div>
+
+        <div class="note-actions">
+            <button (click)="onEdit()" class="btn btn-sm btn-outline" >Edit</button>
+            <button (click)="onDelete()" class="btn btn-sm btn-danger"> Delete </button>
+        </div>
+    </div>
+
+
+</div>

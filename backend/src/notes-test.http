@@ -1,0 +1,32 @@
+### Create a new note
+POST http://localhost:3000/api/notes
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI4MmY2OGUyNS1jOTU4LTRjZGQtYTI5NS05N2M4MDNjMTY1MzIiLCJlbWFpbCI6Impra2ltdW55aUBnbWFpbC5jb20iLCJpYXQiOjE3NTA4ODg4NDcsImV4cCI6MTc1MTQ5MzY0N30.O2Q5eRHmfgW7W7-6OyeRWJxmKL3muxOEQOcUsI9js-U
+
+{
+  "title": "My Second Note",
+  "content": "This is the content of my first note.",
+  "category": "Personal"
+}
+
+### Get all notes
+GET http://localhost:3000/api/notes
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI4MmY2OGUyNS1jOTU4LTRjZGQtYTI5NS05N2M4MDNjMTY1MzIiLCJlbWFpbCI6Impra2ltdW55aUBnbWFpbC5jb20iLCJpYXQiOjE3NTA4ODg4NDcsImV4cCI6MTc1MTQ5MzY0N30.O2Q5eRHmfgW7W7-6OyeRWJxmKL3muxOEQOcUsI9js-U
+
+### Get a specific note
+GET http://localhost:3000/api/notes/note_id_here
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI4MmY2OGUyNS1jOTU4LTRjZGQtYTI5NS05N2M4MDNjMTY1MzIiLCJlbWFpbCI6Impra2ltdW55aUBnbWFpbC5jb20iLCJpYXQiOjE3NTA4ODg4NDcsImV4cCI6MTc1MTQ5MzY0N30.O2Q5eRHmfgW7W7-6OyeRWJxmKL3muxOEQOcUsI9js-U
+
+### Update a note
+PATCH http://localhost:3000/api/notes/c3eae370-9c1b-415b-a901-4e27aa2b7035
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI4MmY2OGUyNS1jOTU4LTRjZGQtYTI5NS05N2M4MDNjMTY1MzIiLCJlbWFpbCI6Impra2ltdW55aUBnbWFpbC5jb20iLCJpYXQiOjE3NTA4ODg4NDcsImV4cCI6MTc1MTQ5MzY0N30.O2Q5eRHmfgW7W7-6OyeRWJxmKL3muxOEQOcUsI9js-U
+
+{
+  "title": "Updated Title",
+  "content": "Updated content for my note."
+}
+
+### Delete a note
+DELETE http://localhost:3000/api/notes/note_id_here
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI4MmY2OGUyNS1jOTU4LTRjZGQtYTI5NS05N2M4MDNjMTY1MzIiLCJlbWFpbCI6Impra2ltdW55aUBnbWFpbC5jb20iLCJpYXQiOjE3NTA4ODg4NDcsImV4cCI6MTc1MTQ5MzY0N30.O2Q5eRHmfgW7W7-6OyeRWJxmKL3muxOEQOcUsI9js-U

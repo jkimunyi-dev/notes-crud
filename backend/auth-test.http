@@ -1,0 +1,39 @@
+### Register a new user
+POST http://localhost:3000/api/auth/register
+Content-Type: application/json
+
+{
+  "email": "jkkimunyi@gmail.com",
+  "password": "@_Kimunyi123!"
+}
+
+### Login with credentials
+POST http://localhost:3000/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "jkkimunyi@gmail.com",
+  "password": "NewPassword123!"
+}
+
+### Get authenticated user profile
+GET http://localhost:3000/api/auth/me
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI4MmY2OGUyNS1jOTU4LTRjZGQtYTI5NS05N2M4MDNjMTY1MzIiLCJlbWFpbCI6Impra2ltdW55aUBnbWFpbC5jb20iLCJpYXQiOjE3NTA4ODY4MzEsImV4cCI6MTc1MTQ5MTYzMX0.0lSmkzv2InC0SRxxMsZaUrkDyyZ7uGxD3_mNRL42ybc
+
+### Request password reset
+POST http://localhost:3000/api/auth/forgot-password
+Content-Type: application/json
+
+{
+  "email": "jkkimunyi@gmail.com"
+}
+
+### Reset password with token
+POST http://localhost:3000/api/auth/reset-password
+Content-Type: application/json
+
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI4MmY2OGUyNS1jOTU4LTRjZGQtYTI5NS05N2M4MDNjMTY1MzIiLCJlbWFpbCI6Impra2ltdW55aUBnbWFpbC5jb20iLCJ0eXBlIjoicGFzc3dvcmQtcmVzZXQiLCJpYXQiOjE3NTA4ODc4MzgsImV4cCI6MTc1MDg5MTQzOH0.rJS0lSqWd6mD80DYI3DbfHGTsA0KiRFKMq7oUClYUTY",
+  "password": "NewPassword123!",
+  "passwordConfirmation": "NewPassword123!"
+}

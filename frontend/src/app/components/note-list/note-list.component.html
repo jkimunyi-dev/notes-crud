@@ -1,0 +1,41 @@
+<div class="note-list-container">
+  <div class="header">
+    <h2>My Notes</h2>
+    <button 
+      (click)="onCreateNote()" 
+      class="btn btn-primary">
+      + Add New Note
+    </button>
+  </div>
+
+  <div class="search-bar">
+    <input 
+      type="text" 
+      [(ngModel)]="searchQuery"
+      (input)="onSearch()"
+      placeholder="Search notes..."
+      class="form-control">
+  </div>
+
+  <div *ngIf="showForm" class="form-overlay">
+    <app-note-form
+      [note]="editingNote"
+      [isEditing]="!!editingNote"
+      (noteSubmit)="onNoteSubmit($event)"
+      (cancel)="onCancel()">
+    </app-note-form>
+  </div>
+
+  <div class="notes-grid">
+    <app-note-item
+      *ngFor="let note of notes$ | async; trackBy: trackByNoteId"
+      [note]="note"
+      (edit)="onEditNote($event)"
+      (delete)="onDeleteNote($event)">
+    </app-note-item>
+  </div>
+
+  <div *ngIf="(notes$ | async)?.length === 0" class="no-notes">
+    <p>No notes found. Create your first note!</p>
+  </div>
+</div>
